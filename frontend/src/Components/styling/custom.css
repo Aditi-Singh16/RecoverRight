@@ -1,0 +1,35 @@
+/* custom.css */
+body {
+    background-color: #FAFAFA;
+    color: #181818;
+    overflow-x: hidden;
+}
+
+.btn-custom1 {
+    background-color: #D2EEC5;
+    border-color: #D2EEC5; /* If you want to set the border as well */
+    color: #181818; /* Choose a text color that has good contrast */
+}
+
+.btn-custom1:hover {
+    background-color: #c1e4b7; /* A slightly darker shade for hover state */
+    border-color: #c1e4b7;
+}
+
+.btn-custom2 {
+    background-color: #A9E190;
+    border-color: #A9E190;
+    color: #181818;
+}
+
+.btn-custom2:hover {
+    background-color: #98cd80;
+    border-color: #98cd80;
+}
+
+.text-pop {
+    color: #DD0093;
+}
+  
+  /* You might want to customize other elements too, based on your UI design */
+  
