@@ -4,8 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import CustomNavbar from './Custom_nav';
-import Image from 'react-bootstrap/Image';
+import right from './images/right.png'
 import { BsTrash } from 'react-icons/bs';
 
 
@@ -352,8 +351,6 @@ dataToModelKeys.forEach(key => {
 
 console.log(jsonData);
 
-
-
 function Home() {
 
     const [doses, setDoses] = useState([]);
@@ -423,15 +420,15 @@ function Home() {
 
     return(
         <>
-        <CustomNavbar/>
-        <div>
+        <div className='Home-main'>
             <Row>
-                <Col className='p-3 m-3'>
-                    <h2>
-                    "Predict, Prevent, and Protect – Revolutionizing Patient Discharge. Bridging Data and Care for Better Health Outcomes."
-                    </h2>
+                <Col className='Home-left'>
+                    <h1>
+                    "<span className='Home-left-b'>Predict</span>, <span className='Home-left-b'>Prevent</span>, and <span className='Home-left-b'>Protect</span> – Revolutionizing Patient Discharge. Bridging Data and Care for Better Health Outcomes."
+                    </h1>
                 </Col>
-                <Col className='p-3 m-3'>
+                <Col className='Home-right'>
+                    <img className='Home-right-img' src={right} alt="illustration" />
                 </Col>
             </Row>
         </div>
