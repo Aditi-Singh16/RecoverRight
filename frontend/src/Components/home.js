@@ -5,7 +5,6 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CustomNavbar from './Custom_nav';
-import patientCareImage from './images/patient_care.png';
 import Image from 'react-bootstrap/Image';
 import { BsTrash } from 'react-icons/bs';
 
@@ -147,6 +146,8 @@ const diagnosis = ['Albumin 25%',
 'Glucerna (Full)'];
 
 
+
+
 function Home() {
 
     const [doses, setDoses] = useState([{ doseName: '', doseQuantity: '' }]);
@@ -178,7 +179,6 @@ function Home() {
                     </h2>
                 </Col>
                 <Col className='p-3 m-3'>
-                    <Image style={{ width: '300px', height: '300px' }} src={patientCareImage} alt="Patient Care" />
                 </Col>
             </Row>
         </div>

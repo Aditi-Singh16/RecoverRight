@@ -2,13 +2,17 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Image from 'react-bootstrap/Image';
+import logo from '../Components/images/logo.png';
 
 function CustomNavbar() {
     return(
         <>
         <Navbar style={{"background":"#c1e4b7"}} data-bs-theme="light">
             <Container>
-            <Navbar.Brand href="#home">RecoverRight</Navbar.Brand>
+            <Navbar.Brand href="#home">
+            <Image src={logo} alt="logo" />
+            </Navbar.Brand>
             <Nav >
                 <Nav.Link href="#home">Home</Nav.Link>
                 <Nav.Link href="#features">Statistics</Nav.Link>
