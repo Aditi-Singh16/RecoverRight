@@ -1,11 +1,12 @@
 import React,{useState} from 'react';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/esm/Container';
+import Button from 'react-bootstrap/esm/Button';
+import Form from 'react-bootstrap/esm/Form';
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
 import right from './images/right.png'
 import { BsTrash } from 'react-icons/bs';
+import Info from './Info';
 
 
 const Medicines = ['Albumin 25%',
@@ -411,6 +412,12 @@ function Home() {
         }).then(res => res.json())
             .then(result => {
                 console.log(result);
+                if (result.prediction===0){
+                    alert("The patient will have a successful discharge.")
+                }
+                else{
+                    alert("The patient will not have a successful discharge.")
+                }
                 if (result.token) {
                 } else if (result.error) {
                 }
@@ -433,10 +440,13 @@ function Home() {
             </Row>
         </div>
         <div>
-        <Container className='m-5'>
-                <Row className="justify-content-md-center">
-                    <Col md={6} style={{ textAlign: 'left' }}>
-                        <Form onSubmit={handleSubmit} style={{ "backgroundColor": "#A9E190" }}>
+            <br/>
+            <br/>
+        <Container>
+                <Row className="Home-analysis">
+                    <Col>
+                    <p className='Home-form-h'>Predict whether the patient will have a successful discharge or not.</p>
+                        <Form onSubmit={handleSubmit} className='Home-form'>
                         <Form.Group className="mb-3 mx-3" controlId="patient_wt">
                             <Form.Label>Patient Weight</Form.Label>
                             <Form.Control type="Number"
@@ -465,10 +475,11 @@ function Home() {
                                     onChange={(e) => setNumDoses(parseInt(e.target.value, 10) || 0)}
                                 />
                             </Form.Group>
-                            <Button variant="secondary" onClick={handleAddDoses} className="mb-3 mx-3">
+                            <center>
+                            <Button onClick={handleAddDoses} className="mb-3 mx-3 btn-pop">
                                 Add Doses
                             </Button>
-
+                            </center>
                             {doses.map((dose, index) => (
                                 <Row className="g-2 mb-3 mx-3" key={index}>
                                 <Col md>
@@ -491,16 +502,17 @@ function Home() {
                                     />
                                 </Col>
                                 <Col xs="auto">
-                                    <Button variant="danger" onClick={() => handleRemoveDose(index)}>
+                                    <Button className='btn-pop' onClick={() => handleRemoveDose(index)}>
                                         <BsTrash />
                                     </Button>
                                 </Col>
                             </Row>
                             ))}
-
-                            <Button variant="primary" type="submit" className="mb-3 mx-3">
+                            <center>
+                            <Button type="submit" className="mb-3 mx-3 btn-pop">
                                 Submit
                             </Button>
+                            </center>
                         </Form>
                     </Col>
                 </Row>

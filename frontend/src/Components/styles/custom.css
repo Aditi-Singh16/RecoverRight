@@ -73,6 +73,73 @@
     height: 700px;
     width: auto;
   }
+  .Home-form{
+    background-color: #D2EEC5;
+    padding: 40px;
+    margin: 40px;
+    text-align: left;
+    border-radius: 30px;
+  }
+  .Home-form-h{
+    float: right;
+    width: 30%;
+    background-color: #DD0093;
+    color: #FAFAFA;
+    padding: 20px;
+    border-radius: 30px;
+  }
+  .btn-pop{
+    background-color: #DD0093;
+    border: none;
+  }
+  .info{
+    margin: 50px;
+    padding: 50px;
+  }
+  .info .info-row{
+    margin: 20px;
+  }
+  .info .info-row .info-col1{
+    border-radius: 40px;
+    background-color: #DD0093;
+    color: #FAFAFA;
+    padding: 60px;
+    margin: 30px;
+  }
+  .info .info-row .info-col2{
+    border-radius: 40px;
+    background-color: #D2EEC5;
+    color: #000000;
+    padding: 60px;
+    margin: 30px;
+  }
+  .info .info-row .info-col2 .info-txt{
+    font-size: larger;
+  }
+  .stats{
+    margin-top: 50px;
+  }
+  .stats .stats-top{
+    width: 1000px;
+    height: auto;
+    margin: 30px;
+  }
+  .stats .stats-down{
+    width: 400px;
+    margin: 40px;
+  }
+  .stats .stats-txt{
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 150px;
+    color: #DD0093;
+  }
+  .footer{
+    background-color: #D2EEC5;
+    margin-top: 50px;
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
   
   @media (max-width: 991px){
     .header-big{

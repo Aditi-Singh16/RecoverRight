@@ -1,14 +1,14 @@
 import { React, useState } from 'react'
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Info from '../src/Components/Info';
-import Home from '../src/Components/Home'; 
-import Stats from '../src/Components/Stats';
+import Info from './Components/Info';
+import Home from './Components/Home'; 
+import Stats from './Components/Stats';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../src/Components/styles/custom.css'
+import './Components/styles/custom.css'
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
-import icon from '../src/Components/images/logo.png';
+import icon from './Components/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 

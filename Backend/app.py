@@ -8,7 +8,7 @@ from flask_cors import CORS
 # Load the model
 model = pickle.load(open('../Data/model.pkl', 'rb'))
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route('/predict', methods=['POST'])
 def index():
@@ -29,7 +29,7 @@ def index():
     # print(data)
     # data = pd.DataFrame(data)
     df = pd.DataFrame(columns= data.keys())
-    df = df.append(data, ignore_index=True)
+    df = df._append(data, ignore_index=True)
 
     # row = []
     # for k,v in data.items():
