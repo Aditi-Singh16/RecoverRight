@@ -307,7 +307,7 @@ const diagnosisOptions = ['SHORTNESS OF BREATH', 'PNEUMONIA', 'ACUTE CHOLANGITIS
 'BRADYCARDIA', 'CHOLANGITIS']
 
 const dataToModelKeys = [
-    "subject_id", "visit", "225152_x", "220949_x", "222168_x", "225943_x", "226361_x", "225158_x", 
+    "225152_x", "220949_x", "222168_x", "225943_x", "226361_x", "225158_x", 
     "226453_x", "225909_x", "225799_x", "225879_x", "221824_x", "226452_x", "225823_x", "226089_x", 
     "222011_x", "225166_x", "225834_x", "221744_x", "221668_x", "225975_x", "225798_x", "225855_x", 
     "225845_x", "225860_x", "225910_x", "225944_x", "225893_x", "227523_x", "225168_x", "225884_x", 
@@ -341,7 +341,7 @@ const dataToModelKeys = [
     "225842_y", "227690_y", "225917_y", "225928_y", "225156_y", "222062_y", "222042_y", "227531_y", 
     "220864_y", "221986_y", "227691_y", "225937_y", "226372_y", "227536_y", "227525_y", "221555_y", 
     "227529_y", "227526_y", "221036_y", "225934_y", "225888_y", "227535_y", "225941_y", "225973_y", 
-    "diagnosis", "hospital_expire_flag", "patientweight"
+    "diagnosis", "patientweight"
 ];
 
 const jsonData = {};
@@ -405,7 +405,7 @@ function Home() {
         jsonData['patientweight'] = weight
     
         console.log(JSON.stringify(jsonData));
-        fetch(`${url}/predict`, {
+        fetch(`http://127.0.0.1:5000/predict`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
@@ -413,6 +413,7 @@ function Home() {
             body: JSON.stringify(jsonData)
         }).then(res => res.json())
             .then(result => {
+                console.log(result);
                 if (result.token) {
                 } else if (result.error) {
                 }
